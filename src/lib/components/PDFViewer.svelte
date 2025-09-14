@@ -21,10 +21,7 @@
 	onMount(async () => {
 		// Dynamic import for pdfjs-dist
 		pdfjs = await import('pdfjs-dist');
-		pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-			'pdfjs-dist/build/pdf.worker.mjs',
-			import.meta.url
-		).href;
+		pdfjs.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/5.4.149/pdf.worker.mjs';
 
 		const pageFlipModule = await import('page-flip');
 		const PageFlip = pageFlipModule.PageFlip || pageFlipModule.default.PageFlip;
