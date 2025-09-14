@@ -101,7 +101,7 @@ const authGuard: Handle = async ({ event, resolve }) => {
   if (event.url.pathname.startsWith('/editions') || event.url.pathname.startsWith('/account')) {
     if (!session) {
       console.log('User not logged in. Redirecting to login.');
-      redirect(303, '/login');
+      redirect(303, '/auth/login');
     }
   }
 
